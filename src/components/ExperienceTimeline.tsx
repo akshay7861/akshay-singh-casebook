@@ -50,32 +50,6 @@ export function ExperienceTimeline({ entries }: ExperienceTimelineProps) {
                     />
                   </div>
                 ) : null}
-                {entry.organisation === 'Alliance Manchester Business School' ? (
-                  <div className="mt-3 rounded border border-border bg-white p-2">
-                    <p className="mb-2 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-muted">
-                      Project & Competition Logos
-                    </p>
-                    <div className="grid grid-cols-2 gap-2">
-                      {entry.subSections
-                        ?.flatMap((section) => section.items)
-                        .filter((item) => item.logo)
-                        .map((item) => (
-                          <div
-                            key={`left-logo-${item.title}`}
-                            className="flex h-12 items-center justify-center rounded border border-border bg-page px-2"
-                            title={item.title}
-                          >
-                            <img
-                              src={item.logo}
-                              alt={item.title}
-                              className="max-h-9 w-full object-contain"
-                              loading="lazy"
-                            />
-                          </div>
-                        ))}
-                    </div>
-                  </div>
-                ) : null}
               </div>
               <div className="p-6">
                 <p className="text-sm font-semibold uppercase tracking-[0.12em] text-gold">
@@ -112,15 +86,31 @@ export function ExperienceTimeline({ entries }: ExperienceTimelineProps) {
                           <div className="mt-3 space-y-3">
                             {section.items.map((item) => (
                               <article key={item.title} className="rounded border border-border bg-white p-3">
-                                <div className="flex flex-wrap items-start justify-between gap-3">
-                                  <p className="text-sm font-semibold text-navy">{item.title}</p>
-                                  {item.year ? (
-                                    <span className="rounded border border-border px-2 py-0.5 text-[0.7rem] font-semibold text-muted">
-                                      {item.year}
-                                    </span>
-                                  ) : null}
+                                <div className="grid gap-3 md:grid-cols-[120px_1fr] md:items-start">
+                                  {item.logo ? (
+                                    <div className="flex h-16 items-center justify-center rounded border border-border bg-page px-2">
+                                      <img
+                                        src={item.logo}
+                                        alt={item.title}
+                                        className="max-h-12 w-full object-contain"
+                                        loading="lazy"
+                                      />
+                                    </div>
+                                  ) : (
+                                    <div />
+                                  )}
+                                  <div>
+                                    <div className="flex flex-wrap items-center gap-2">
+                                      <p className="text-sm font-semibold text-navy">{item.title}</p>
+                                      {item.year ? (
+                                        <span className="rounded border border-border px-2 py-0.5 text-[0.7rem] font-semibold text-muted">
+                                          {item.year}
+                                        </span>
+                                      ) : null}
+                                    </div>
+                                    <p className="mt-2 text-sm leading-6 text-body">{item.summary}</p>
+                                  </div>
                                 </div>
-                                <p className="mt-2 text-sm leading-6 text-body">{item.summary}</p>
                                 <ul className="mt-2 space-y-1.5 text-sm leading-6 text-body">
                                   {item.outputs.map((output) => (
                                     <li key={output} className="border-l-2 border-border pl-3">
