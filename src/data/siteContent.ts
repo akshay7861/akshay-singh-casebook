@@ -76,6 +76,7 @@ export type TimelineEntry = {
     items: Array<{
       title: string
       year?: string
+      logo?: string
       summary: string
       outputs: string[]
       coverage: string[]
@@ -394,6 +395,7 @@ export const timelineEntries: TimelineEntry[] = [
         items: [
           {
             title: 'Vestergaard - U.S. Market Entry Strategy',
+            logo: '/logos/vestergaard.png',
             summary:
               'Finance-led market-entry project assessing U.S. commercial viability, revenue potential and go-to-market pathways for treated residential screen solutions.',
             outputs: [
@@ -411,6 +413,7 @@ export const timelineEntries: TimelineEntry[] = [
           },
           {
             title: 'The Vegetarian Society - Digital Consultancy Strategy',
+            logo: '/logos/vegetarian-society.png',
             summary:
               'Finance-led strategy project to scale COOK! from a low-profile in-person service into a national digitally enabled vegetarian and vegan consultancy.',
             outputs: [
@@ -428,6 +431,7 @@ export const timelineEntries: TimelineEntry[] = [
           },
           {
             title: 'Carymor - Strategy / Market Analysis',
+            logo: '/logos/carymor.png',
             summary:
               'Strategy project focused on market assessment, commercial positioning and growth recommendations for Carymor.',
             outputs: [
@@ -450,6 +454,7 @@ export const timelineEntries: TimelineEntry[] = [
           {
             title: 'VCIC - Venture Capital Investment Competition',
             year: '2025',
+            logo: '/logos/vcic.avif',
             summary:
               'Venture capital investment competition involving startup assessment, investment thesis development and investor-style recommendation.',
             outputs: [
@@ -467,6 +472,7 @@ export const timelineEntries: TimelineEntry[] = [
           {
             title: 'Oxford Private Equity Competition - Finalist',
             year: '2025',
+            logo: '/logos/oxford-pe.avif',
             summary:
               'Finalist in the Oxford Private Equity Competition, applying private equity-style analysis to assess investment opportunity, value creation levers and transaction rationale.',
             outputs: [

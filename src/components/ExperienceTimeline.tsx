@@ -86,12 +86,22 @@ export function ExperienceTimeline({ entries }: ExperienceTimelineProps) {
                           <div className="mt-3 space-y-3">
                             {section.items.map((item) => (
                               <article key={item.title} className="rounded border border-border bg-white p-3">
-                                <div className="flex flex-wrap items-center gap-2">
+                                <div className="flex flex-wrap items-start justify-between gap-3">
                                   <p className="text-sm font-semibold text-navy">{item.title}</p>
                                   {item.year ? (
                                     <span className="rounded border border-border px-2 py-0.5 text-[0.7rem] font-semibold text-muted">
                                       {item.year}
                                     </span>
+                                  ) : null}
+                                  {item.logo ? (
+                                    <div className="ml-auto flex h-10 w-24 items-center justify-center rounded border border-border bg-page px-2">
+                                      <img
+                                        src={item.logo}
+                                        alt={item.title}
+                                        className="max-h-7 w-full object-contain"
+                                        loading="lazy"
+                                      />
+                                    </div>
                                   ) : null}
                                 </div>
                                 <p className="mt-2 text-sm leading-6 text-body">{item.summary}</p>
