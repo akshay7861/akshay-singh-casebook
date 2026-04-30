@@ -25,7 +25,7 @@ type PortfolioPageProps = {
 export function PortfolioPage({ onReplayIntro }: PortfolioPageProps) {
   return (
     <div className="min-h-screen bg-page text-ink">
-      <Header items={navItems} phone={contact.phone} email={contact.email} linkedinHref={contact.linkedin} />
+      <Header items={navItems} />
       <main>
         <HomeCasebook timelineEntries={timelineEntries} onReplayIntro={onReplayIntro} />
         <CredibilityStrip companies={companyWordmarks} />

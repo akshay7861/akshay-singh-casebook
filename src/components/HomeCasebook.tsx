@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import type { Dispatch, SetStateAction } from 'react'
 import type { HeroImage, TimelineEntry } from '../data/siteContent'
 import { contact, heroImages } from '../data/siteContent'
@@ -13,9 +13,22 @@ export function HomeCasebook({
   onReplayIntro,
 }: HomeCasebookProps) {
   const [failedImages, setFailedImages] = useState<string[]>([])
+  const [showCopyToast, setShowCopyToast] = useState(false)
+  const copyToastTimer = useRef<number | null>(null)
   const trackRecord = timelineEntries.filter((entry) =>
     ['Pitalia Capital', 'Bank of America', 'Futures First'].includes(entry.organisation),
   )
+
+  const copyEmail = () => {
+    if (copyToastTimer.current) {
+      window.clearTimeout(copyToastTimer.current)
+    }
+    navigator.clipboard?.writeText(contact.email).then(
+      () => setShowCopyToast(true),
+      () => setShowCopyToast(true),
+    )
+    copyToastTimer.current = window.setTimeout(() => setShowCopyToast(false), 1800)
+  }
 
   return (
     <>
@@ -39,6 +52,42 @@ export function HomeCasebook({
                 <span>Portfolio Intelligence</span>
                 <span className="text-gold">|</span>
                 <span>Updated 2026</span>
+              </div>
+              <div className="mt-3 flex flex-wrap items-center gap-3">
+                {contact.phone ? (
+                  <a
+                    href={`tel:${contact.phone.replace(/\s+/g, '')}`}
+                    className="inline-flex items-center gap-2 rounded border border-border bg-white/80 px-3 py-1.5 text-sm font-semibold text-navy transition hover:border-gold hover:text-gold"
+                  >
+                    <span aria-hidden="true">📞</span>
+                    <span>{contact.phone}</span>
+                  </a>
+                ) : null}
+                <a
+                  href={contact.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded border border-border bg-white/80 text-navy transition hover:border-gold hover:text-gold"
+                  aria-label="LinkedIn profile"
+                  title="LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden="true">
+                    <path d="M6.94 8.5a1.56 1.56 0 1 1 0-3.12 1.56 1.56 0 0 1 0 3.12Zm-1.34 2h2.67V19H5.6v-8.5Zm4.36 0h2.56v1.17h.04c.36-.67 1.24-1.37 2.56-1.37 2.73 0 3.24 1.8 3.24 4.13V19H15.7v-3.99c0-.95-.02-2.18-1.33-2.18-1.33 0-1.54 1.04-1.54 2.11V19H9.96v-8.5Z" />
+                  </svg>
+                </a>
+                <button
+                  type="button"
+                  onClick={copyEmail}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded border border-border bg-white/80 text-navy transition hover:border-gold hover:text-gold"
+                  aria-label="Copy work email"
+                  title="Copy email"
+                >
+                  <svg viewBox="0 0 24 24" className="h-4 w-4 stroke-current" fill="none" strokeWidth="2" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="m4 7 8 6 8-6" />
+                  </svg>
+                </button>
+                {showCopyToast ? <p className="copy-toast">Work email copied to clipboard</p> : null}
               </div>
               <h1 className="casebook-title mt-6 max-w-3xl text-[4.4rem] leading-[0.9] text-navy md:text-[6.8rem]">
                 Akshay Singh Casebook
