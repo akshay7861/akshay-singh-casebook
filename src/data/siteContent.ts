@@ -312,8 +312,8 @@ export const companyWordmarks: CompanyWordmark[] = [
 
 export const heroImages: HeroImage[] = [
   {
-    src: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&q=80',
-    alt: 'London financial district skyline',
+    src: 'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=900',
+    alt: 'Canary Wharf skyline in London',
   },
   {
     src: '/photos-trading-desk.png',

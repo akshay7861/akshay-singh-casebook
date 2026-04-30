@@ -124,7 +124,7 @@ export function HomeCasebook({
             </div>
 
             <div className="grid grid-cols-12 gap-3">
-              <MediaTile image={heroImages[1]} className="col-span-8 h-44 md:h-52" failedImages={failedImages} setFailedImages={setFailedImages} />
+              <MediaTile image={heroImages[1]} className="col-span-8 h-44 md:h-52" imgClassName="object-contain bg-section p-1" failedImages={failedImages} setFailedImages={setFailedImages} />
               <MediaTile image={heroImages[0]} className="col-span-4 h-44 md:h-52" failedImages={failedImages} setFailedImages={setFailedImages} />
               <div className="coverage-panel col-span-12">
                 <div className="flex items-center justify-between border-b border-border px-4 py-3">
@@ -203,11 +203,12 @@ export function HomeCasebook({
 type MediaTileProps = {
   image: HeroImage
   className: string
+  imgClassName?: string
   failedImages: string[]
   setFailedImages: Dispatch<SetStateAction<string[]>>
 }
 
-function MediaTile({ image, className, failedImages, setFailedImages }: MediaTileProps) {
+function MediaTile({ image, className, imgClassName, failedImages, setFailedImages }: MediaTileProps) {
   const failed = failedImages.includes(image.src)
 
   if (failed) {
@@ -220,7 +221,7 @@ function MediaTile({ image, className, failedImages, setFailedImages }: MediaTil
       alt={image.alt}
       loading="lazy"
       onError={() => setFailedImages((items) => [...items, image.src])}
-      className={`w-full rounded border border-border object-cover ${className}`}
+      className={`w-full rounded border border-border object-cover ${imgClassName ?? ''} ${className}`}
     />
   )
 }
