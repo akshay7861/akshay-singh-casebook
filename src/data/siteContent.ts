@@ -316,8 +316,8 @@ export const heroImages: HeroImage[] = [
     alt: 'London financial district skyline',
   },
   {
-    src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80',
-    alt: 'Office buildings in financial district',
+    src: '/photos-trading-desk.png',
+    alt: 'Trading desk and market analytics workstation',
   },
   {
     src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80',

@@ -220,7 +220,7 @@ function MediaTile({ image, className, failedImages, setFailedImages }: MediaTil
       alt={image.alt}
       loading="lazy"
       onError={() => setFailedImages((items) => [...items, image.src])}
-      className={`w-full rounded border border-border object-cover grayscale ${className}`}
+      className={`w-full rounded border border-border object-cover ${className}`}
     />
   )
 }
