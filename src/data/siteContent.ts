@@ -312,7 +312,7 @@ export const companyWordmarks: CompanyWordmark[] = [
 
 export const heroImages: HeroImage[] = [
   {
-    src: 'https://source.unsplash.com/1200x900/?canary-wharf,london,skyline',
+    src: '/canary-wharf-cityline.jpg',
     alt: 'Canary Wharf city skyline in London',
   },
   {
