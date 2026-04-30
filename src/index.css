@@ -56,7 +56,7 @@
   }
 
   .report-card {
-    @apply border border-border bg-card shadow-card transition duration-200;
+    @apply border border-border bg-card shadow-card transition duration-300;
   }
 
   .research-panel {
@@ -83,6 +83,10 @@
 
   .dark-button {
     @apply inline-flex items-center justify-center border border-gold/70 bg-transparent px-4 py-2 text-sm font-semibold text-white transition hover:bg-gold hover:text-navy focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy;
+  }
+
+  .copy-toast {
+    @apply inline-flex items-center border border-gold/65 bg-white/95 px-3 py-2 text-sm font-semibold text-navy shadow-card;
   }
 
   .casebook-title {
@@ -310,7 +314,17 @@
   }
 
   .section-fade {
-    animation: fadeUp 500ms ease both;
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 520ms ease,
+      transform 520ms ease;
+    transition-delay: var(--stagger-delay, 0ms);
+  }
+
+  .section-fade.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .logo-pitalia {
@@ -318,20 +332,10 @@
   }
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .section-fade {
-    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

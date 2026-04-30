@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 type ContactPageProps = {
   cvHref: string
   email: string
@@ -6,8 +8,19 @@ type ContactPageProps = {
 }
 
 export function ContactPage({ cvHref, email, phone, linkedinHref }: ContactPageProps) {
+  const [copied, setCopied] = useState(false)
+
+  useEffect(() => {
+    if (!copied) return
+    const timer = window.setTimeout(() => setCopied(false), 1800)
+    return () => window.clearTimeout(timer)
+  }, [copied])
+
   const copyEmail = () => {
-    navigator.clipboard?.writeText(email).catch(() => undefined)
+    navigator.clipboard?.writeText(email).then(
+      () => setCopied(true),
+      () => setCopied(true),
+    )
   }
 
   return (
@@ -22,7 +35,7 @@ export function ContactPage({ cvHref, email, phone, linkedinHref }: ContactPageP
             I&apos;m open to full-time opportunities and collaborations in capital markets, risk,
             analytics, automation, business analysis, advisory and consultancy.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <a href={cvHref} className="dark-button">
               Download CV
             </a>
@@ -37,6 +50,7 @@ export function ContactPage({ cvHref, email, phone, linkedinHref }: ContactPageP
             <a href={linkedinHref} target="_blank" rel="noreferrer" className="dark-button">
               LinkedIn
             </a>
+            {copied ? <p className="copy-toast">Work email copied to clipboard</p> : null}
           </div>
         </div>
       </div>
