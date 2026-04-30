@@ -75,18 +75,44 @@ export function ExperienceTimeline({ entries }: ExperienceTimelineProps) {
                     ))}
                   </div>
                 ) : null}
-                {entry.subItems?.length ? (
+                {entry.subSections?.length ? (
                   <div className="mt-5 border-t border-border pt-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-gold">
-                      Consulting Projects
-                    </p>
-                    <div className="mt-3 space-y-3">
-                      {entry.subItems.map((item) => (
-                        <article key={item.title} className="rounded border border-border bg-page p-3">
-                          <p className="text-sm font-semibold text-navy">{item.title}</p>
-                          {item.dateRange ? <p className="text-xs text-muted">{item.dateRange}</p> : null}
-                          <p className="mt-1 text-sm leading-6 text-body">{item.summary}</p>
-                        </article>
+                    <div className="space-y-4">
+                      {entry.subSections.map((section) => (
+                        <details key={section.title} className="rounded border border-border bg-page p-3" open>
+                          <summary className="cursor-pointer text-xs font-semibold uppercase tracking-[0.12em] text-gold">
+                            {section.title}
+                          </summary>
+                          <div className="mt-3 space-y-3">
+                            {section.items.map((item) => (
+                              <article key={item.title} className="rounded border border-border bg-white p-3">
+                                <div className="flex flex-wrap items-center gap-2">
+                                  <p className="text-sm font-semibold text-navy">{item.title}</p>
+                                  {item.year ? (
+                                    <span className="rounded border border-border px-2 py-0.5 text-[0.7rem] font-semibold text-muted">
+                                      {item.year}
+                                    </span>
+                                  ) : null}
+                                </div>
+                                <p className="mt-2 text-sm leading-6 text-body">{item.summary}</p>
+                                <ul className="mt-2 space-y-1.5 text-sm leading-6 text-body">
+                                  {item.outputs.map((output) => (
+                                    <li key={output} className="border-l-2 border-border pl-3">
+                                      {output}
+                                    </li>
+                                  ))}
+                                </ul>
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                  {item.coverage.map((tag) => (
+                                    <span key={tag} className="report-chip">
+                                      {tag}
+                                    </span>
+                                  ))}
+                                </div>
+                              </article>
+                            ))}
+                          </div>
+                        </details>
                       ))}
                     </div>
                   </div>
