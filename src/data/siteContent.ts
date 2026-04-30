@@ -453,7 +453,6 @@ export const timelineEntries: TimelineEntry[] = [
         items: [
           {
             title: 'VCIC - Venture Capital Investment Competition',
-            year: '2025',
             logo: '/logos/vcic.avif',
             summary:
               'Venture capital investment competition involving startup assessment, investment thesis development and investor-style recommendation.',
@@ -471,7 +470,6 @@ export const timelineEntries: TimelineEntry[] = [
           },
           {
             title: 'Oxford Private Equity Competition - Finalist',
-            year: '2025',
             logo: '/logos/oxford-pe.avif',
             summary:
               'Finalist in the Oxford Private Equity Competition, applying private equity-style analysis to assess investment opportunity, value creation levers and transaction rationale.',
