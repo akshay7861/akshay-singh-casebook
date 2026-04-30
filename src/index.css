@@ -27,11 +27,7 @@
     margin: 0;
     min-height: 100vh;
     font-size: 17px;
-    background:
-      radial-gradient(circle at 20% 10%, rgba(198, 161, 91, 0.09), transparent 28rem),
-      linear-gradient(90deg, rgba(16, 32, 51, 0.035) 1px, transparent 1px),
-      linear-gradient(#f7f5f0, #f7f5f0);
-    background-size: auto, 34px 34px, auto;
+    background: #f7f5f0;
   }
 
   a {
@@ -56,7 +52,7 @@
   }
 
   .report-card {
-    @apply border border-border bg-card shadow-card transition duration-300;
+    @apply border border-border bg-card shadow-card transition duration-200;
   }
 
   .research-panel {
@@ -97,14 +93,11 @@
   .casebook-hero {
     position: relative;
     overflow: hidden;
-    background:
-      linear-gradient(90deg, rgba(247, 245, 240, 0.96) 0%, rgba(247, 245, 240, 0.88) 54%, rgba(247, 245, 240, 0.72) 100%),
-      radial-gradient(circle at 78% 24%, rgba(184, 135, 70, 0.18), transparent 18rem),
-      repeating-linear-gradient(135deg, rgba(16, 32, 51, 0.08) 0 1px, transparent 1px 16px);
+    background: linear-gradient(90deg, rgba(247, 245, 240, 0.98) 0%, rgba(247, 245, 240, 0.9) 58%, rgba(247, 245, 240, 0.78) 100%);
   }
 
   .casebook-hero::after {
-    content: '';
+    content: none;
     position: absolute;
     inset: 2rem 0 auto auto;
     width: min(46vw, 560px);
@@ -156,7 +149,7 @@
   }
 
   .value-card {
-    @apply grid grid-cols-[76px_1fr] gap-5 border border-border border-t-4 border-t-gold bg-white p-6 shadow-card transition hover:-translate-y-1 hover:border-gold hover:shadow-lift;
+    @apply grid grid-cols-[76px_1fr] gap-5 border border-border border-t-4 border-t-gold bg-white p-6 shadow-card transition hover:border-gold hover:shadow-lift;
   }
 
   .value-mark {
@@ -186,7 +179,7 @@
   }
 
   .casebook-row {
-    @apply relative border border-border border-l-4 border-l-gold bg-white shadow-card transition hover:-translate-y-0.5 hover:border-gold hover:shadow-lift;
+    @apply relative border border-border border-l-4 border-l-gold bg-white shadow-card transition hover:border-gold hover:shadow-lift;
   }
 
   .casebook-row::before {
@@ -315,10 +308,10 @@
 
   .section-fade {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(8px);
     transition:
-      opacity 520ms ease,
-      transform 520ms ease;
+      opacity 280ms ease,
+      transform 280ms ease;
     transition-delay: var(--stagger-delay, 0ms);
   }
 

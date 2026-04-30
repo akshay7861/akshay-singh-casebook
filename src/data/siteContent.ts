@@ -322,7 +322,7 @@ export const heroImages: HeroImage[] = [
     alt: 'Canary Wharf city skyline in London',
   },
   {
-    src: '/photos-trading-desk.png',
+    src: '/photos-trading-desk.jpg',
     alt: 'Trading desk and market analytics workstation',
   },
   {
