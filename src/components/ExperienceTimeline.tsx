@@ -15,9 +15,8 @@ export function ExperienceTimeline({ entries }: ExperienceTimelineProps) {
         <SectionHeading
           label="Institutional Track Record"
           title="Experience, education and strategic project timeline"
-          description="A deeper view of work experience, MBA context, education and editable consulting project slots."
+          description="A complete journey across institutional roles, MBA consulting exposure, education and market-focused analytical development."
         />
-        <p className="mt-5 hidden text-base text-muted md:block">Hover each node to explore the journey.</p>
         <div className="relative mt-10 space-y-5">
           <span className="timeline-thread absolute left-[56px] top-2 hidden h-[calc(100%-16px)] w-[6px] lg:block" />
           {entries.map((entry, index) => (
@@ -50,11 +49,6 @@ export function ExperienceTimeline({ entries }: ExperienceTimelineProps) {
                       className={`max-h-10 w-full object-contain ${entry.logoClassName ?? ''}`}
                     />
                   </div>
-                ) : null}
-                {entry.editable ? (
-                  <span className="mt-4 inline-flex border border-border bg-page px-2 py-1 text-xs font-semibold text-muted">
-                    Editable
-                  </span>
                 ) : null}
               </div>
               <div className="p-6">

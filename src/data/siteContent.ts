@@ -366,26 +366,25 @@ export const timelineEntries: TimelineEntry[] = [
     summary:
       'MBA with focus on strategy, finance, business development and consulting-style problem solving.',
     bullets: [
-      'Editable placeholder: add MBA consulting, strategy and finance project detail.',
-      'Editable placeholder: add leadership, business development or venture analysis detail.',
+      'MBA consulting stream focused on strategy, finance and market-oriented problem solving.',
+      'Applied business development, analytical framing and stakeholder communication across project work.',
     ],
     tags: ['MBA', 'Strategy', 'Finance', 'Consulting'],
-    editable: true,
     logo: '/logos/ambs.gif',
     subItems: [
       {
         title: 'Consulting Project 1 - Strategy / Market Analysis',
-        summary: 'Editable placeholder: add project context, contribution and outcome.',
+        summary: 'Strategy project with market analysis framing, commercial context and recommendation structure.',
         dateRange: '2023',
       },
       {
         title: 'Consulting Project 2 - Business Creation / Venture Analysis',
-        summary: 'Editable placeholder: add project context, contribution and outcome.',
+        summary: 'Venture analysis project focused on business model viability, growth pathway and execution priorities.',
         dateRange: '2023',
       },
       {
         title: 'Consulting Project 3 - Finance / Transformation Project',
-        summary: 'Editable placeholder: add project context, contribution and outcome.',
+        summary: 'Finance transformation project focused on process redesign, reporting discipline and implementation roadmap.',
         dateRange: '2024',
       },
     ],
@@ -417,10 +416,9 @@ export const timelineEntries: TimelineEntry[] = [
     summary:
       'Engineering foundation with quantitative, analytical and project-based problem-solving experience.',
     bullets: [
-      'Editable placeholder: add engineering project, quantitative coursework or leadership detail.',
+      'Engineering training with quantitative coursework, analytical projects and structured problem-solving exposure.',
     ],
     tags: ['Engineering', 'Quantitative', 'Problem Solving'],
-    editable: true,
     logo: '/logos/bit-mesra.png',
   },
 ]
