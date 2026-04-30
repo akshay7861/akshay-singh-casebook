@@ -50,6 +50,32 @@ export function ExperienceTimeline({ entries }: ExperienceTimelineProps) {
                     />
                   </div>
                 ) : null}
+                {entry.organisation === 'Alliance Manchester Business School' ? (
+                  <div className="mt-3 rounded border border-border bg-white p-2">
+                    <p className="mb-2 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-muted">
+                      Project & Competition Logos
+                    </p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {entry.subSections
+                        ?.flatMap((section) => section.items)
+                        .filter((item) => item.logo)
+                        .map((item) => (
+                          <div
+                            key={`left-logo-${item.title}`}
+                            className="flex h-12 items-center justify-center rounded border border-border bg-page px-2"
+                            title={item.title}
+                          >
+                            <img
+                              src={item.logo}
+                              alt={item.title}
+                              className="max-h-9 w-full object-contain"
+                              loading="lazy"
+                            />
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                ) : null}
               </div>
               <div className="p-6">
                 <p className="text-sm font-semibold uppercase tracking-[0.12em] text-gold">
@@ -92,16 +118,6 @@ export function ExperienceTimeline({ entries }: ExperienceTimelineProps) {
                                     <span className="rounded border border-border px-2 py-0.5 text-[0.7rem] font-semibold text-muted">
                                       {item.year}
                                     </span>
-                                  ) : null}
-                                  {item.logo ? (
-                                    <div className="ml-auto flex h-10 w-24 items-center justify-center rounded border border-border bg-page px-2">
-                                      <img
-                                        src={item.logo}
-                                        alt={item.title}
-                                        className="max-h-7 w-full object-contain"
-                                        loading="lazy"
-                                      />
-                                    </div>
                                   ) : null}
                                 </div>
                                 <p className="mt-2 text-sm leading-6 text-body">{item.summary}</p>
