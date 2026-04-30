@@ -124,7 +124,7 @@ export function HomeCasebook({
             </div>
 
             <div className="grid grid-cols-12 gap-3">
-              <MediaTile image={heroImages[1]} className="col-span-8 h-44 md:h-52" imgClassName="object-contain bg-section p-1" failedImages={failedImages} setFailedImages={setFailedImages} />
+              <MediaTile image={heroImages[1]} className="col-span-8 h-44 md:h-52" imgClassName="object-contain bg-section p-3" failedImages={failedImages} setFailedImages={setFailedImages} />
               <MediaTile image={heroImages[0]} className="col-span-4 h-44 md:h-52" failedImages={failedImages} setFailedImages={setFailedImages} />
               <div className="coverage-panel col-span-12">
                 <div className="flex items-center justify-between border-b border-border px-4 py-3">

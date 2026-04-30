@@ -312,8 +312,8 @@ export const companyWordmarks: CompanyWordmark[] = [
 
 export const heroImages: HeroImage[] = [
   {
-    src: 'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=900',
-    alt: 'Canary Wharf skyline in London',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/9/97/Canary_Wharf_from_Greenwich_Park%2C_London%2C_England_-_Jul_2009.jpg',
+    alt: 'Canary Wharf city skyline in London',
   },
   {
     src: '/photos-trading-desk.png',
